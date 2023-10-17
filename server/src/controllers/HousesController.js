@@ -42,6 +42,7 @@ export class HousesController extends BaseController {
       let userInfo = request.userInfo
       houseData.creatorId = userInfo.id
       let house = await housesService.createHouse(houseData)
+      return response.send(house)
     } catch (error) {
       next(error)
     }
